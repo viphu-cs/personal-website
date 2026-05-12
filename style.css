@@ -1,0 +1,419 @@
+/* ENTER PAGE */
+
+#enter-page {
+  position: fixed;
+  inset: 0;
+
+  background-image: url("images/enter_screen2.gif");
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  overflow: hidden;
+}
+
+/* scanline effect */
+
+#enter-page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+
+  pointer-events: none;
+}
+
+/* BOX */
+
+.enter-box {
+  text-align: center;
+
+  padding: 40px;
+
+  background: rgba(100, 0, 84, 0.685);
+
+  border: 1px solid #ffb7ff;
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 20px #ff7de9,
+    0 0 50px #7df9ff;
+
+  animation: floaty 3s ease-in-out infinite;
+}
+
+.enter-box h1 {
+  color: rgb(255, 255, 255);
+
+  font-size: 32px;
+
+  margin-bottom: 10px;
+
+  text-shadow:
+    -2px 0 #d104af,
+    0 1px #383738,
+    2px 0 #d104af,
+    0 -1px #383738,
+    0 0 4px #d104af;
+}
+
+.enter-box p {
+  color: #ddd;
+
+  margin-bottom: 20px;
+
+  letter-spacing: 2px;
+}
+
+/* BUTTON */
+
+#enter-btn {
+  padding: 12px 30px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: linear-gradient(90deg, #fa3cea, #d104af, #000000);
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+#enter-btn:hover {
+  transform: scale(1.08);
+
+  box-shadow: 0 0 20px #fff;
+}
+
+/* FLOAT */
+
+@keyframes floaty {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* HIDE SITE */
+
+#site-content {
+  display: none;
+}
+
+body {
+  background-image: url("images/metro_bg.jpg");
+  background-size: fill;
+  font-family: "kosugi maru";
+  color: white;
+  font-size: 15px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.wrapper {
+  width: 900px;
+  height: auto;
+  padding: 5px;
+  background-color: transparent;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+aside {
+  width: 220px;
+  padding: 10px;
+}
+
+main {
+  flex: 1;
+  order: 2;
+  margin-top: 17px;
+}
+
+.left {
+  order: 1;
+}
+
+.right {
+  order: 3;
+}
+
+#flex {
+  display: flex;
+}
+
+.scroll {
+  overflow: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.box {
+  border: #d104af ridge;
+  margin: 5px;
+  padding: 5px;
+  background-image: url("images/pattern.jpg");
+  background-size: 50%;
+}
+
+.content {
+  background-image: url("images/metro_48.png");
+  background-color: #ff63e5;
+  background-size:fill;
+  border: 1px solid #770063;
+  color: #440041;
+  padding: 5px;
+  margin: 5px;
+}
+
+.content h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "kosugi maru";
+  text-shadow:
+    -2px 0 #d104af,
+    0 1px #383738,
+    2px 0 #d104af,
+    0 -1px #383738,
+    0 0 4px #d104af;
+}
+
+.content p {
+  color: #ffffff;
+  text-shadow:
+    0 0 10px #570048;
+  font-size: 16px;
+  font-weight:normal;
+  font-family: "kosugi maru";
+}
+
+.content li {
+  color: #ffffff;
+    text-shadow:
+    -2px 0 #d104af,
+    0 1px #383738,
+    2px 0 #d104af,
+    0 -1px #383738,
+    0 0 4px #d104af;
+  font-size: 16px;
+  font-weight:normal;
+  font-family: "kosugi maru";
+}
+
+.header {
+  height: 100px;
+  background-image: url("images/header.png");
+  background-size: 100%;
+  background-position: center;
+  border: ridge #d104af;
+  position: relative;
+  image-rendering: auto;
+}
+
+.ht {
+  position: absolute;
+  bottom: -15px;
+  left: 0px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "kosugi maru";
+  text-shadow:
+    -2px 0 #d104af,
+    0 1px #383738,
+    2px 0 #d104af,
+    0 -1px #383738,
+    0 0 4px #d104af;
+}
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin-bottom: 8px;
+}
+
+nav a {
+  display: block;
+  padding: 10px;
+  background:  linear-gradient(90deg, #fa3cea, #d104af, #000000);
+  border: 1px solid #d104af;
+  border-radius: 10px;
+
+  color: rgb(255, 255, 255);
+  text-decoration:none;
+  font-size: 14px;
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+
+  backdrop-filter: blur(4px);
+}
+
+nav a:hover {
+  background: linear-gradient(90deg, #fa3cea, #d104af, #000000);
+
+  color: #ffffff;
+
+  transform: translateX(5px);
+  letter-spacing: 5px;
+
+  box-shadow: 0 0 10px #ff7de9;
+}
+
+.blink-text {
+
+  animation: blink 1.5s infinite;
+
+}
+
+@keyframes blink {
+
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+.marquee {
+
+  width: 100%;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border-top: 1px solid #ff7de9;
+  border-bottom: 1px solid #ff7de9;
+
+  padding: 10px 0;
+
+  background: black;
+
+}
+
+.marquee-text {
+
+  display: inline-block;
+
+  padding-left: 100%;
+
+  animation: marquee 20s linear infinite;
+
+  color: #ff7de9;
+
+  font-weight: bold;
+
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 0 10px #ff7de9;
+
+}
+
+@keyframes marquee {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+
+}
+
+.update-post {
+
+  margin-bottom: 20px;
+
+  padding: 10px;
+
+  border-left:
+    2px solid #ff7de9;
+
+  background:
+    rgba(97, 0, 97, 0.548);
+
+}
+
+.update-date {
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  margin-bottom: 5px;
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 5px #ff7de9;
+
+}
+
+.update-content {
+
+  color: #ffffff;
+
+  line-height: 1.5;
+
+}
