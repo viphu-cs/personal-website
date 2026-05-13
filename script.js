@@ -90,3 +90,38 @@ updates.forEach(update => {
   `;
 
 });
+
+/* SPOTIFY IFRAME API */
+window.onSpotifyIframeApiReady = (IFrameAPI) => {
+  const element = document.getElementById('spotify-embed');
+  const options = {
+    uri: 'spotify:track:76j0uitplft5gODYnoQ62V',
+    width: '100%',
+    height: '100',
+    theme: '0'
+  };
+  const callback = (EmbedController) => {
+    let playTimeout;
+
+    EmbedController.addListener('playback_update', e => {
+      clearTimeout(playTimeout);
+
+      // Check if the track has reached the end (less than 0.1 second remaining)
+      const isEnded = e.data.duration > 0 && (e.data.duration - e.data.position) < 100;
+      if (e.data.isPaused || isEnded) {
+        // Paused or Ended: Revert to normal background
+        document.body.style.backgroundImage = 'url("images/metro_bg.jpg")';
+      } else {
+        // Playing: Change to video/gif
+        document.body.style.backgroundImage = 'url("images/canvas_yungtarr.gif")';
+
+        // Fallback: If Spotify stops sending updates (e.g., preview ends without sending isPaused)
+        // We revert the background after 3 seconds of no updates.
+        playTimeout = setTimeout(() => {
+          document.body.style.backgroundImage = 'url("images/metro_bg.jpg")';
+        }, 3000);
+      }
+    });
+  };
+  IFrameAPI.createController(element, options, callback);
+};
