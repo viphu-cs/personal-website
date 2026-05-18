@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="3D Globe Gallery — Interactive photo sphere"
+    />
+    <link rel="stylesheet" href="gallery.css" type="text/css" media="all" />
+    <title>Gallery ★</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.cursors-4u.net/cursors/animated/slapping-cat-1348ecde-48.css"
+  />
+  <body class="gallery-body">
+    <!-- CANVAS (Three.js renders here) -->
+    <canvas id="gallery-canvas"></canvas>
+
+    <!-- BACK BUTTON -->
+    <a href="index.html?skip=true" class="back-btn" id="back-btn">← BACK</a>
+
+    <!-- TITLE -->
+    <div class="gallery-title-overlay">
+      <h1>★ GALLERY ★</h1>
+      <p class="gallery-subtitle">drag to rotate &nbsp;✦&nbsp; click to view</p>
+    </div>
+
+    <!-- CONTROLS HINT -->
+    <div class="controls-hint">
+      🖱️ drag to rotate &nbsp;•&nbsp; 📱 swipe to spin &nbsp;•&nbsp; 🔍 scroll
+      to zoom
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox-overlay" id="lightbox-overlay">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close">✕</button>
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+    </div>
+
+    <script type="module" src="gallery.js"></script>
+  </body>
+</html>

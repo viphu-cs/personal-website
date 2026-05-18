@@ -63,6 +63,11 @@ const updates = [
     date: "11/5/2026",
     content: "Start making a website."
   }
+,
+  {
+    date: "17/5/2026",
+    content: "Add gallery section."
+  }
 
 ];
 
